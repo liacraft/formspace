@@ -5,23 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Amalia — UI/UX Designer" />
-  <title>formspace — Design Portfolio</title>
-
+  <title>Amalia — UI/UX Designer</title>
+  
   <!-- icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
 
-  <!-- Favicon -->
+   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.jpg" />
 
-  <!-- Open Graph: link preview -->
+   <!-- Open Graph: link preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="formspace" />
-  <meta property="og:title" content="formspace — Design Portfolio" />
-  <meta property="og:description" content="Exploring thoughtful interfaces, digital experiences, and visual communication." />
-  <meta property="og:url" content="https://liacraft.github.io/formspace/" />
-  <meta property="og:image" content="https://liacraft.github.io/formspace/assets/og-image.jpg" />
-  <meta property="og:image:alt" content="formspace design portfolio preview" />
-
+  <meta property="og:site_name" content="Amalia Portfolio" />
+  <meta property="og:title" content="Amalia | UI/UX Designer" />
+  <meta
+    property="og:description"
+    content="Selected work in UI/UX design, digital products, web and mobile experiences, and visual communication."
+  />
+  <meta
+    property="og:url"
+    content="https://liacraft.github.io/Landing-Page-v2/"
+  />
+  <meta
+    property="og:image"
+    content="https://liacraft.github.io/Landing-Page-v2/assets/og-image.jpg"
+  />
+  <meta property="og:image:alt" content="Amalia's design portfolio preview" />
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -86,7 +95,7 @@
       overflow: hidden;
       border-radius: 1rem;
       background: #EDEBE7;
-      border: 1px solid rgba(0, 0, 0, .06);
+      border: 1px solid rgba(0,0,0,.06);
       cursor: zoom-in;
     }
 
@@ -94,7 +103,7 @@
       display: block;
       width: 100%;
       height: auto;
-      transition: transform .55s cubic-bezier(.2, .7, .2, 1);
+      transition: transform .55s cubic-bezier(.2,.7,.2,1);
     }
 
     .visual-masonry-overlay {
@@ -103,7 +112,7 @@
       display: flex;
       align-items: flex-end;
       padding: 1.1rem;
-      background: linear-gradient(to top, rgba(17, 24, 39, .82), rgba(17, 24, 39, .12) 58%, transparent);
+      background: linear-gradient(to top, rgba(17,24,39,.82), rgba(17,24,39,.12) 58%, transparent);
       opacity: 0;
       transition: opacity .3s ease;
     }
@@ -129,479 +138,470 @@
     }
 
     @media (max-width: 1023px) {
-      .visual-masonry {
-        column-count: 2;
-      }
+      .visual-masonry { column-count: 2; }
     }
 
     @media (max-width: 639px) {
-      .visual-masonry {
-        column-count: 1;
-      }
+      .visual-masonry { column-count: 1; }
       .visual-masonry-overlay {
         opacity: 1;
-        background: linear-gradient(to top, rgba(17, 24, 39, .72), transparent 55%);
+        background: linear-gradient(to top, rgba(17,24,39,.72), transparent 55%);
       }
-      .visual-masonry-info {
-        transform: none;
-      }
+      .visual-masonry-info { transform: none; }
     }
   </style>
-  <style id="visual-gallery-masonry-styles">
-    .gallery-masonry-item {
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-    }
-  </style>
+<style id="visual-gallery-masonry-styles">
+  .gallery-masonry-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+</style>
   <style>
-    /* Typing Animation */
+    
+/* Typing Animation */
+.name-typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 4px solid #2563EB;
+  padding-right: 3px;
+  animation:
+    name-typing 1.2s steps(7, end) 0.4s forwards,
+    cursor-blink 0.7s step-end infinite;
+}
 
-    .name-typing {
-      display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      border-right: 4px solid #2563EB;
-      padding-right: 3px;
-      animation: name-typing 1.2s steps(7, end) 0.4s forwards,
-      cursor-blink 0.7s step-end infinite;
-    }
+@keyframes name-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7ch;
+  }
+}
 
-    @keyframes name-typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 7ch;
-      }
-    }
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
+}
 
-    @keyframes cursor-blink {
-      50% {
-        border-color: transparent;
-      }
-    }
+/* Soft Animated Glow */
+.hero-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(75px);
+  z-index: 0;
+  will-change: transform;
+}
 
-    /* Soft Animated Glow */
+.hero-glow-one {
+  width: 300px;
+  height: 300px;
+  background: rgba(37, 99, 235, 0.13);
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: glow-float 8s ease-in-out infinite alternate;
+}
 
-    .hero-glow {
-      position: absolute;
-      pointer-events: none;
-      border-radius: 50%;
-      filter: blur(75px);
-      z-index: 0;
-      will-change: transform;
-    }
+.hero-glow-two {
+  width: 220px;
+  height: 220px;
+  background: rgba(126, 214, 198, 0.12);
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: glow-float 10s ease-in-out infinite alternate-reverse;
+}
 
-    .hero-glow-one {
-      width: 300px;
-      height: 300px;
-      background: rgba(37, 99, 235, 0.13);
-      top: 18%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: glow-float 8s ease-in-out infinite alternate;
-    }
+@keyframes glow-float {
+  0% {
+    translate: -35px -15px;
+    scale: 0.95;
+  }
+  100% {
+    translate: 35px 20px;
+    scale: 1.1;
+  }
+}
 
-    .hero-glow-two {
-      width: 220px;
-      height: 220px;
-      background: rgba(126, 214, 198, 0.12);
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: glow-float 10s ease-in-out infinite alternate-reverse;
-    }
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .name-typing {
+    width: 7ch;
+    animation: none;
+    border-right: none;
+  }
 
-    @keyframes glow-float {
-      0% {
-        translate: -35px -15px;
-        scale: 0.95;
-      }
-      100% {
-        translate: 35px 20px;
-        scale: 1.1;
-      }
-    }
-
-    /* Accessibility */
-
-    @media (prefers-reduced-motion: reduce) {
-      .name-typing {
-        width: 7ch;
-        animation: none;
-        border-right: none;
-      }
-
-      .hero-glow {
-        animation: none;
-      }
-    }
-
-    /* ========================================
+  .hero-glow {
+    animation: none;
+  }
+}
+    
+/* ========================================
    HERO BACKGROUND
 ======================================== */
 
-    .hero-section {
-      isolation: isolate;
-      background: #FAF9F7;
-    }
+.hero-section {
+  isolation: isolate;
+  background: #FAF9F7;
+}
 
-    /* Grid */
+/* Grid */
+.hero-grid {
+  z-index: 0;
+  opacity: 0.7;
+  background-image:
+    linear-gradient(rgba(31, 41, 55, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 41, 55, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
 
-    .hero-grid {
-      z-index: 0;
-      opacity: 0.7;
-      background-image: linear-gradient(rgba(31, 41, 55, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(31, 41, 55, 0.045) 1px, transparent 1px);
-      background-size: 64px 64px;
-    }
+/* Gradient Orbs */
+.hero-orb {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  will-change: transform;
+}
 
-    /* Gradient Orbs */
+.hero-orb-left {
+  width: min(46vw, 620px);
+  height: min(46vw, 620px);
+  top: -25%;
+  left: -18%;
+  background: radial-gradient(
+    circle at 55% 55%,
+    rgba(96, 165, 250, 0.27) 0%,
+    rgba(147, 197, 253, 0.20) 35%,
+    rgba(196, 181, 253, 0.12) 58%,
+    transparent 72%
+  );
+  animation: orb-drift-left 14s ease-in-out infinite alternate;
+}
 
-    .hero-orb {
-      position: absolute;
-      z-index: 0;
-      pointer-events: none;
-      border-radius: 50%;
-      will-change: transform;
-    }
+.hero-orb-right {
+  width: min(50vw, 680px);
+  height: min(50vw, 680px);
+  right: -20%;
+  bottom: -30%;
+  background: radial-gradient(
+    circle at 45% 45%,
+    rgba(59, 130, 246, 0.23) 0%,
+    rgba(96, 165, 250, 0.19) 34%,
+    rgba(167, 139, 250, 0.15) 57%,
+    transparent 72%
+  );
+  animation: orb-drift-right 17s ease-in-out infinite alternate;
+}
 
-    .hero-orb-left {
-      width: min(46vw, 620px);
-      height: min(46vw, 620px);
-      top: -25%;
-      left: -18%;
-      background: radial-gradient( circle at 55% 55%,
-      rgba(96, 165, 250, 0.27) 0%,
-      rgba(147, 197, 253, 0.20) 35%,
-      rgba(196, 181, 253, 0.12) 58%,
-      transparent 72%);
-      animation: orb-drift-left 14s ease-in-out infinite alternate;
-    }
+/* Ambient Glows */
+.hero-glow {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(55px);
+  will-change: transform, opacity;
+}
 
-    .hero-orb-right {
-      width: min(50vw, 680px);
-      height: min(50vw, 680px);
-      right: -20%;
-      bottom: -30%;
-      background: radial-gradient( circle at 45% 45%,
-      rgba(59, 130, 246, 0.23) 0%,
-      rgba(96, 165, 250, 0.19) 34%,
-      rgba(167, 139, 250, 0.15) 57%,
-      transparent 72%);
-      animation: orb-drift-right 17s ease-in-out infinite alternate;
-    }
+.hero-glow-top {
+  width: 24px;
+  height: 24px;
+  top: 25%;
+  right: 27%;
+  background: rgba(56, 189, 248, 0.7);
+  opacity: 0.55;
+  animation: glow-pulse 5s ease-in-out infinite;
+}
 
-    /* Ambient Glows */
+.hero-glow-bottom {
+  width: 34px;
+  height: 34px;
+  left: 20%;
+  bottom: 13%;
+  background: rgba(59, 130, 246, 0.55);
+  opacity: 0.4;
+  animation: glow-pulse 7s ease-in-out infinite reverse;
+}
 
-    .hero-glow {
-      position: absolute;
-      z-index: 1;
-      pointer-events: none;
-      border-radius: 50%;
-      filter: blur(55px);
-      will-change: transform, opacity;
-    }
+/* Orbit Circles */
+.hero-orbit {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px dashed rgba(59, 130, 246, 0.24);
+  border-radius: 50%;
+}
 
-    .hero-glow-top {
-      width: 24px;
-      height: 24px;
-      top: 25%;
-      right: 27%;
-      background: rgba(56, 189, 248, 0.7);
-      opacity: 0.55;
-      animation: glow-pulse 5s ease-in-out infinite;
-    }
+.hero-orbit-left {
+  width: 640px;
+  height: 640px;
+  top: -18%;
+  left: -12%;
+  animation: orbit-drift-left 22s ease-in-out infinite alternate;
+}
 
-    .hero-glow-bottom {
-      width: 34px;
-      height: 34px;
-      left: 20%;
-      bottom: 13%;
-      background: rgba(59, 130, 246, 0.55);
-      opacity: 0.4;
-      animation: glow-pulse 7s ease-in-out infinite reverse;
-    }
+.hero-orbit-right {
+  width: 700px;
+  height: 700px;
+  right: -17%;
+  bottom: -45%;
+  animation: orbit-drift-right 26s ease-in-out infinite alternate;
+}
 
-    /* Orbit Circles */
+/* Floating Dots */
+.hero-dot {
+  position: absolute;
+  z-index: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #60A5FA;
+  box-shadow: 0 0 16px 5px rgba(96, 165, 250, 0.25);
+  pointer-events: none;
+  animation: dot-float 6s ease-in-out infinite alternate;
+}
 
-    .hero-orbit {
-      position: absolute;
-      z-index: 1;
-      pointer-events: none;
-      border: 1px dashed rgba(59, 130, 246, 0.24);
-      border-radius: 50%;
-    }
+.hero-dot-one {
+  top: 30%;
+  right: 15%;
+}
 
-    .hero-orbit-left {
-      width: 640px;
-      height: 640px;
-      top: -18%;
-      left: -12%;
-      animation: orbit-drift-left 22s ease-in-out infinite alternate;
-    }
+.hero-dot-two {
+  bottom: 23%;
+  left: 29%;
+  animation-delay: -3s;
+}
 
-    .hero-orbit-right {
-      width: 700px;
-      height: 700px;
-      right: -17%;
-      bottom: -45%;
-      animation: orbit-drift-right 26s ease-in-out infinite alternate;
-    }
-
-    /* Floating Dots */
-
-    .hero-dot {
-      position: absolute;
-      z-index: 1;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #60A5FA;
-      box-shadow: 0 0 16px 5px rgba(96, 165, 250, 0.25);
-      pointer-events: none;
-      animation: dot-float 6s ease-in-out infinite alternate;
-    }
-
-    .hero-dot-one {
-      top: 30%;
-      right: 15%;
-    }
-
-    .hero-dot-two {
-      bottom: 23%;
-      left: 29%;
-      animation-delay: -3s;
-    }
-
-    /* ========================================
+/* ========================================
    TYPING ANIMATION
 ======================================== */
 
-    .name-typing {
-      display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      border-right: 4px solid #2563EB;
-      padding-right: 3px;
-      animation: name-typing 1.2s steps(7, end) 0.4s forwards,
-      cursor-blink 0.7s step-end infinite;
-    }
+.name-typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 4px solid #2563EB;
+  padding-right: 3px;
+  animation:
+    name-typing 1.2s steps(7, end) 0.4s forwards,
+    cursor-blink 0.7s step-end infinite;
+}
 
-    @keyframes name-typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 7ch;
-      }
-    }
+@keyframes name-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7ch;
+  }
+}
 
-    @keyframes cursor-blink {
-      50% {
-        border-color: transparent;
-      }
-    }
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
+}
 
-    /* ========================================
+/* ========================================
    KEYFRAMES: BACKGROUND
 ======================================== */
 
-    @keyframes orb-drift-left {
-      from {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      to {
-        transform: translate3d(35px, 25px, 0) scale(1.06);
-      }
-    }
+@keyframes orb-drift-left {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(35px, 25px, 0) scale(1.06);
+  }
+}
 
-    @keyframes orb-drift-right {
-      from {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      to {
-        transform: translate3d(-30px, -25px, 0) scale(1.08);
-      }
-    }
+@keyframes orb-drift-right {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-30px, -25px, 0) scale(1.08);
+  }
+}
 
-    @keyframes orbit-drift-left {
-      from {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      to {
-        transform: translate(20px, 12px) rotate(5deg);
-      }
-    }
+@keyframes orbit-drift-left {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(20px, 12px) rotate(5deg);
+  }
+}
 
-    @keyframes orbit-drift-right {
-      from {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      to {
-        transform: translate(-18px, -12px) rotate(-4deg);
-      }
-    }
+@keyframes orbit-drift-right {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(-18px, -12px) rotate(-4deg);
+  }
+}
 
-    @keyframes glow-pulse {
-      0%,
-      100% {
-        opacity: 0.25;
-        transform: scale(0.85);
-      }
-      50% {
-        opacity: 0.8;
-        transform: scale(1.2);
-      }
-    }
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
 
-    @keyframes dot-float {
-      from {
-        transform: translateY(0);
-        opacity: 0.45;
-      }
-      to {
-        transform: translateY(-14px);
-        opacity: 0.9;
-      }
-    }
+@keyframes dot-float {
+  from {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  to {
+    transform: translateY(-14px);
+    opacity: 0.9;
+  }
+}
 
-    /* ========================================
+/* ========================================
    RESPONSIVE
 ======================================== */
 
-    @media (max-width: 768px) {
-      .hero-grid {
-        background-size: 48px 48px;
-        opacity: 0.55;
-      }
+@media (max-width: 768px) {
+  .hero-grid {
+    background-size: 48px 48px;
+    opacity: 0.55;
+  }
 
-      .hero-orb-left {
-        width: 100vw;
-        height: 100vw;
-        top: -8%;
-        left: -48%;
-      }
+  .hero-orb-left {
+    width: 100vw;
+    height: 100vw;
+    top: -8%;
+    left: -48%;
+  }
 
-      .hero-orb-right {
-        width: 100vw;
-        height: 100vw;
-        right: -48%;
-        bottom: -12%;
-      }
+  .hero-orb-right {
+    width: 100vw;
+    height: 100vw;
+    right: -48%;
+    bottom: -12%;
+  }
 
-      .hero-orbit-left {
-        width: 380px;
-        height: 380px;
-        top: -5%;
-        left: -48%;
-      }
+  .hero-orbit-left {
+    width: 380px;
+    height: 380px;
+    top: -5%;
+    left: -48%;
+  }
 
-      .hero-orbit-right {
-        width: 420px;
-        height: 420px;
-        right: -55%;
-        bottom: -10%;
-      }
+  .hero-orbit-right {
+    width: 420px;
+    height: 420px;
+    right: -55%;
+    bottom: -10%;
+  }
 
-      .hero-glow-top {
-        top: 22%;
-        right: 12%;
-      }
+  .hero-glow-top {
+    top: 22%;
+    right: 12%;
+  }
 
-      .hero-glow-bottom {
-        left: 10%;
-        bottom: 15%;
-      }
+  .hero-glow-bottom {
+    left: 10%;
+    bottom: 15%;
+  }
 
-      .hero-dot-one {
-        right: 9%;
-      }
+  .hero-dot-one {
+    right: 9%;
+  }
 
-      .hero-dot-two {
-        left: 12%;
-      }
-    }
+  .hero-dot-two {
+    left: 12%;
+  }
+}
 
-    /* Accessibility */
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb,
+  .hero-glow,
+  .hero-orbit,
+  .hero-dot {
+    animation: none !important;
+  }
 
-    @media (prefers-reduced-motion: reduce) {
-      .hero-orb,
-      .hero-glow,
-      .hero-orbit,
-      .hero-dot {
-        animation: none !important;
-      }
+  .name-typing {
+    width: 7ch;
+    animation: none;
+    border-right: none;
+  }
+}
+    
+/* Floating Gradient Circles */
+.hero-orb-left {
+  animation: circle-float-left 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
 
-      .name-typing {
-        width: 7ch;
-        animation: none;
-        border-right: none;
-      }
-    }
+.hero-orb-right {
+  animation: circle-float-right 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
 
-    /* Floating Gradient Circles */
+/* Left Circle: Slow Diagonal Movement */
+@keyframes circle-float-left {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(50px, 30px, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(70px, 75px, 0) scale(1.1);
+  }
+  75% {
+    transform: translate3d(25px, 55px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(-15px, 15px, 0) scale(1);
+  }
+}
 
-    .hero-orb-left {
-      animation: circle-float-left 18s ease-in-out infinite alternate;
-      will-change: transform;
-    }
+/* Right Circle: Opposite Movement */
+@keyframes circle-float-right {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(-45px, -35px, 0) scale(1.06);
+  }
+  50% {
+    transform: translate3d(-65px, -65px, 0) scale(1.1);
+  }
+  75% {
+    transform: translate3d(-25px, -40px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(15px, -10px, 0) scale(1);
+  }
+}
 
-    .hero-orb-right {
-      animation: circle-float-right 22s ease-in-out infinite alternate;
-      will-change: transform;
-    }
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb-left,
+  .hero-orb-right {
+    animation: none !important;
+  }
+}
 
-    /* Left Circle: Slow Diagonal Movement */
 
-    @keyframes circle-float-left {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      25% {
-        transform: translate3d(50px, 30px, 0) scale(1.05);
-      }
-      50% {
-        transform: translate3d(70px, 75px, 0) scale(1.1);
-      }
-      75% {
-        transform: translate3d(25px, 55px, 0) scale(1.04);
-      }
-      100% {
-        transform: translate3d(-15px, 15px, 0) scale(1);
-      }
-    }
 
-    /* Right Circle: Opposite Movement */
-
-    @keyframes circle-float-right {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      25% {
-        transform: translate3d(-45px, -35px, 0) scale(1.06);
-      }
-      50% {
-        transform: translate3d(-65px, -65px, 0) scale(1.1);
-      }
-      75% {
-        transform: translate3d(-25px, -40px, 0) scale(1.04);
-      }
-      100% {
-        transform: translate3d(15px, -10px, 0) scale(1);
-      }
-    }
-
-    /* Respect Reduced Motion */
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-orb-left,
-      .hero-orb-right {
-        animation: none !important;
-      }
-    }
   </style>
 </head>
 
@@ -620,84 +620,90 @@
   </header>
 
   <main>
+    
 
 
+<section id="home" class="hero-section relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
 
-    <section id="home" class="hero-section relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
+  <!-- Base Background -->
+  <div class="absolute inset-0 bg-[#FAF9F7] pointer-events-none"></div>
 
-      <!-- Base Background -->
-      <div class="absolute inset-0 bg-[#FAF9F7] pointer-events-none"></div>
+  <!-- Grid Background -->
+  <div class="hero-grid absolute inset-0 pointer-events-none"></div>
 
-      <!-- Grid Background -->
-      <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+  <!-- Gradient Orbs -->
+  <div class="hero-orb hero-orb-left"></div>
+  <div class="hero-orb hero-orb-right"></div>
 
-      <!-- Gradient Orbs -->
-      <div class="hero-orb hero-orb-left"></div>
-      <div class="hero-orb hero-orb-right"></div>
+  <!-- Ambient Glows -->
+  <div class="hero-glow hero-glow-top"></div>
+  <div class="hero-glow hero-glow-bottom"></div>
 
-      <!-- Ambient Glows -->
-      <div class="hero-glow hero-glow-top"></div>
-      <div class="hero-glow hero-glow-bottom"></div>
+  <!-- Dashed Orbit Circles -->
+  <div class="hero-orbit hero-orbit-left"></div>
+  <div class="hero-orbit hero-orbit-right"></div>
 
-      <!-- Dashed Orbit Circles -->
-      <div class="hero-orbit hero-orbit-left"></div>
-      <div class="hero-orbit hero-orbit-right"></div>
+  <!-- Floating Glow Dots -->
+  <div class="hero-dot hero-dot-one"></div>
+  <div class="hero-dot hero-dot-two"></div>
 
-      <!-- Floating Glow Dots -->
-      <div class="hero-dot hero-dot-one"></div>
-      <div class="hero-dot hero-dot-two"></div>
+  <!-- Hero Content -->
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full relative z-10">
+    <div class="flex justify-center">
+      <div class="w-full max-w-3xl text-center">
 
-      <!-- Hero Content -->
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full relative z-10">
-        <div class="flex justify-center">
-          <div class="w-full max-w-3xl text-center">
-
-            <!-- Availability -->
-            <div class="reveal inline-flex items-center justify-center gap-2 mb-8 is-visible">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span class="text-sm font-medium text-[#6B7280]">
+        <!-- Availability -->
+        <div class="reveal inline-flex items-center justify-center gap-2 mb-8 is-visible">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-sm font-medium text-[#6B7280]">
             Open to new opportunities
           </span>
-            </div>
+        </div>
 
-            <!-- Heading with Typing Animation -->
-            <h1 class="reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6 is-visible">
-              Hi, I'm
-              <br>
-              <span class="name-typing text-[#2563EB]">Amalia.</span>
-            </h1>
+        <!-- Heading with Typing Animation -->
+        <h1 class="reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6 is-visible">
+          Hi, I'm
+          <br>
+          <span class="name-typing text-[#2563EB]">Amalia.</span>
+        </h1>
 
-            <!-- Subtitle -->
-            <p class="reveal text-base sm:text-lg font-semibold text-[#6B7280] mb-4 uppercase tracking-wide is-visible">
-              UI/UX Designer with Front-End Experience
-            </p>
+        <!-- Subtitle -->
+        <p class="reveal text-base sm:text-lg font-semibold text-[#6B7280] mb-4 uppercase tracking-wide is-visible">
+          UI/UX Designer with Front-End Experience
+        </p>
 
-            <!-- Description -->
-            <p class="reveal text-base sm:text-lg text-[#4B5563] leading-relaxed max-w-2xl mx-auto mb-10 is-visible">
-              I design intuitive digital experiences by aligning user needs with business goals and translating them into clean, functional
-              interfaces.
-            </p>
+        <!-- Description -->
+        <p class="reveal text-base sm:text-lg text-[#4B5563] leading-relaxed max-w-2xl mx-auto mb-10 is-visible">
+          I design intuitive digital experiences by aligning user needs
+          with business goals and translating them into clean, functional interfaces.
+        </p>
 
-            <!-- CTA Buttons -->
-            <div class="reveal flex flex-wrap justify-center gap-3 is-visible">
+        <!-- CTA Buttons -->
+        <div class="reveal flex flex-wrap justify-center gap-3 is-visible">
 
-              <a href="#work" class="inline-flex items-center gap-2 px-6 py-3.5 bg-[#2563EB] text-white text-sm font-semibold rounded-full hover:bg-[#1D4ED8] transition-colors">
+          <a
+            href="#work"
+            class="inline-flex items-center gap-2 px-6 py-3.5 bg-[#2563EB] text-white text-sm font-semibold rounded-full hover:bg-[#1D4ED8] transition-colors">
             View My Work
             <i class="fa-solid fa-arrow-right"></i>
           </a>
 
-              <a href="https://liacraft.github.io/Landing-Page-v2/assets/Portfolio-Amalia.pdf" target="_blank" download="Portfolio-Amalia.pdf"
-                rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 border border-[#171717]/20 rounded-full text-sm font-semibold hover:bg-white transition-colors">
+          <a
+            href="https://liacraft.github.io/Landing-Page-v2/assets/Portfolio-Amalia.pdf"
+            target="_blank"
+            download="Portfolio-Amalia.pdf"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3.5 border border-[#171717]/20 rounded-full text-sm font-semibold hover:bg-white transition-colors">
             <i class="fa-solid fa-download"></i>
             Download Resume
           </a>
 
-            </div>
-
-          </div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
 
@@ -732,7 +738,14 @@
                 posts and banners.</p>
               <p>With a background in front-end development, I can bridge the gap between design and implementation, translating
                 interfaces into responsive web experiences using HTML and CSS.</p>
-            </div>>
+            </div>
+            <!-- <div class="reveal d3 mt-10 flex flex-wrap gap-2">
+              <span class="text-sm font-semibold px-4 py-2 bg-[#EFF6FF] text-[#2563EB] rounded-full">UI Design</span>
+              <span class="text-sm font-semibold px-4 py-2 bg-[#EFF6FF] text-[#2563EB] rounded-full">UI UX Research</span>
+              <span class="text-sm font-semibold px-4 py-2 bg-[#EFF6FF] text-[#2563EB] rounded-full">Design Systems</span>
+              <span class="text-sm font-semibold px-4 py-2 bg-[#EFF6FF] text-[#2563EB] rounded-full">Responsive Web</span>
+              <span class="text-sm font-semibold px-4 py-2 bg-[#EFF6FF] text-[#2563EB] rounded-full">Front-End Development</span>
+            </div> -->
           </div>
           <div>
             <div class="reveal d2 mb-10">
@@ -792,13 +805,10 @@
                     <p class="text-sm font-semibold text-[#2563EB] mt-0.5">PT. Mandiri Tunas Finance</p>
                   </div><span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-[#EFF6FF] text-[#2563EB]">2024 — Present</span></div>
                 <ul class="space-y-2 text-sm text-[#6B7280]">
-                  <li>• Translated business requirements into user flows, wireframes, and high-fidelity UI designs for web and
-                    mobile products.</li>
-                  <li>• Conducted competitive benchmarking and design research to identify relevant interface patterns and improvement
-                    opportunities.</li>
+                  <li>• Translated business requirements into user flows, wireframes, and high-fidelity UI designs for web and mobile products.</li>
+                  <li>• Conducted competitive benchmarking and design research to identify relevant interface patterns and improvement opportunities.</li>
                   <li>• Designed and refined UI components and patterns to maintain consistency across digital products.</li>
-                  <li>• Collaborated with stakeholders and developers to align design solutions with business requirements and
-                    implementation needs.</li>
+                  <li>• Collaborated with stakeholders and developers to align design solutions with business requirements and implementation needs.</li>
                   <li>• Created promotional materials and visual assets to communicate MTF Mobile features and digital services.</li>
                 </ul>
               </div>
@@ -815,8 +825,7 @@
                   <li>• Translated design concepts into web interfaces using HTML, CSS, and JavaScript.</li>
                   <li>• Implemented website interfaces using Next.js and Tailwind CSS for the Career Website project.</li>
                   <li>• Developed reusable UI structures and components to support consistent interface implementation.</li>
-                  <li>• Collaborated with stakeholders and developers to refine designs and align implementation with design
-                    requirements.</li>
+                  <li>• Collaborated with stakeholders and developers to refine designs and align implementation with design requirements.</li>
                 </ul>
               </div>
             </div>
@@ -845,7 +854,7 @@
             <p class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-6">Let's Connect</p>
             <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">Have an idea<br>worth bringing to life?</h2>
             <p class="text-base sm:text-lg text-white/60 leading-relaxed mb-10">Let's turn it into a thoughtful digital experience.</p>
-            <a href="mailto:amalia97career@gmail.com" class="inline-flex px-7 py-4 bg-[#2563EB] text-white text-sm font-bold rounded-full hover:bg-[#3B82F6]">Get in Touch <i class="fa-solid fa-arrow-right-long p-1"></i>
+              <a href="mailto:amalia97career@gmail.com" class="inline-flex px-7 py-4 bg-[#2563EB] text-white text-sm font-bold rounded-full hover:bg-[#3B82F6]">Get in Touch <i class="fa-solid fa-arrow-right-long p-1"></i>
               </a></div>
         </div>
         <div class="mt-12 grid sm:grid-cols-3 gap-4">
@@ -1009,281 +1018,90 @@
         ]
       },
       {
-        id: 'visual-design',
-        title: 'Visual Communication & Promotional Design',
-        category: 'Visual Design',
-        year: '2024 — 2026',
-        role: 'UI/UX Analyst',
-        tools: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop'],
-        description: 'A collection of visual communication, promotional, and infographic assets created to support digital products, campaigns, internal communication, and business reporting.',
-        type: 'gallery',
-        gallery: [{
-            category: 'Social Media & Digital Campaigns',
-            description: 'Social media visuals and campaign assets designed for product promotion, customer engagement, seasonal campaigns, and digital communication.',
-            items: [{
-                image: './assets/cover-poster.jpg',
-                title: 'Social Media Poster',
-                year: '2026'
-              },
-              {
-                image: './assets/PelunasanDipercepat.jpg',
-                title: 'Early Settlement',
-                year: '2025'
-              },
-              {
-                image: './assets/PerpanjanganSTNK.jpg',
-                title: 'STNK Extension',
-                year: '2025'
-              },
-              {
-                image: './assets/RencanakanKredit.jpg',
-                title: 'Credit Simulation',
-                year: '2025'
-              },
-              {
-                image: './assets/DigiSign.jpg',
-                title: 'DigiSign',
-                year: '2026'
-              },
-              {
-                image: './assets/Endorsement.jpg',
-                title: 'Endorsement Campaign',
-                year: '2026'
-              },
-              {
-                image: './assets/GIIAS.jpg',
-                title: 'GIIAS',
-                year: '2025'
-              },
-              {
-                image: './assets/PinjamDana.jpg',
-                title: 'Pinjam Dana',
-                year: '2025'
-              },
-              {
-                image: './assets/PromoHarpelnas.jpg',
-                title: 'Harpelnas 2025',
-                year: '2025'
-              },
-              {
-                image: './assets/promo-cashback-va.jpg',
-                title: 'Virtual Account — MTF Mobile',
-                year: '2026'
-              },
-              {
-                image: './assets/download-mtfmobile.jpg',
-                title: 'MTF Mobile — App Download Campaign',
-                year: '2026'
-              },
-              {
-                image: './assets/product-launch.jpg',
-                title: 'Collect-in — Product Launch',
-                year: '2026'
-              },
-              {
-                image: './assets/pengambilan-bpkb.jpg',
-                title: 'BPKB Pickup Booking — MTF Mobile',
-                year: '2026'
-              },
-              {
-                image: './assets/PGM.jpg',
-                title: 'Perwira Get Member Campaign',
-                year: '2025'
-              },
-              {
-                image: './assets/va-launched.jpg',
-                title: 'Virtual Account — Self-Service Payment',
-                year: '2026'
-              },
-              {
-                image: './assets/StnkNonDebitur.jpg',
-                title: 'STNK Extension — MTF Mobile',
-                year: '2026'
-              },
-              {
-                image: './assets/BayarAngsuran.jpg',
-                title: 'Payment via MTF Mobile',
-                year: '2025'
-              },
-              {
-                image: './assets/BookingBPKB.jpg',
-                title: 'BPKB Pickup Booking',
-                year: '2025'
-              },
-              {
-                image: './assets/FiturEksklusif.jpg',
-                title: 'Exclusive Features',
-                year: '2025'
-              },
-              {
-                image: './assets/Harpelnas2025.jpg',
-                title: 'Harpelnas 2025',
-                year: '2025'
-              },
-              {
-                image: './assets/LelangInfo.jpg',
-                title: 'Car Auction',
-                year: '2025'
-              },
-              {
-                image: './assets/MTFMobile.jpg',
-                title: 'Productivity & Cashback Campaign',
-                year: '2025'
-              }
-            ]
-          },
-          {
-            category: 'Website & Digital Banners',
-            description: 'Digital banners and promotional visuals designed for websites, landing pages, popups, and other digital touchpoints.',
-            items: [{
-                image: './assets/Xbanner.jpg',
-                title: 'Download App X-Banner',
-                year: '2025'
-              },
-              {
-                image: './assets/Lapping.jpg',
-                title: 'Anti-Lapping Awareness',
-                year: '2025'
-              },
-              {
-                image: './assets/Lelang.jpg',
-                title: 'Lelang Mobil',
-                year: '2025'
-              },
-              {
-                image: './assets/Mtf.jpg',
-                title: 'Financial Management',
-                year: '2025'
-              },
-              {
-                image: './assets/Pajak.jpg',
-                title: 'Tax Payment',
-                year: '2025'
-              },
-              {
-                image: './assets/PencairanDana.jpg',
-                title: 'Fund Disbursement',
-                year: '2025'
-              },
-              {
-                image: './assets/ReferralPertamina.jpg',
-                title: 'Instagram Post',
-                year: '2024'
-              },
-              {
-                image: './assets/PromoHutRI.jpg',
-                title: 'Special Kemerdekaan',
-                year: '2025'
-              },
-              {
-                image: './assets/pgm.jpg',
-                title: 'Perwira Get Member Campaign',
-                year: '2025'
-              },
-              {
-                image: './assets/PartnerBlibli.jpg',
-                title: 'Promotional Campaign',
-                year: '2025'
-              },
-              {
-                image: './assets/informasi-hari-libur.jpg',
-                title: 'Payment & STNK Extension Reminder',
-                year: '2025'
-              },
-            ]
-          },
-          {
-            category: 'Email & Direct Communication',
-            description: 'Visual communication assets created for email marketing, customer notifications, reminders, and direct digital communication.',
-            items: [{
-                image: './assets/Reminder.jpg',
-                title: 'Payment Reminder — MTF Mobile',
-                year: '2025'
-              },
-              {
-                image: './assets/BranchCompetition.jpg',
-                title: 'MTF Mobile Branch Competition',
-                year: '2024'
-              },
-              {
-                image: './assets/UserTestimonial.jpg',
-                title: 'Internal Email Campaign',
-                year: '2026'
-              },
-              {
-                image: './assets/OHCompetition.jpg',
-                title: 'Reward Campaign',
-                year: '2025'
-              },
-              {
-                image: './assets/PDP.jpg',
-                title: 'PDP Customer Education',
-                year: '2025'
-              },
-              {
-                image: './assets/Sla.jpg',
-                title: 'Faster Process',
-                year: '2025'
-              },
-              {
-                image: './assets/TransaksiAman.jpg',
-                title: 'Secure Transactions',
-                year: '2026'
-              },
-              {
-                image: './assets/Asuransi.jpg',
-                title: 'Vehicle Insurance',
-                year: '2026'
-              },
-              {
-                image: './assets/KejarRewards.jpg',
-                title: 'Branch Campaign',
-                year: '2025'
-              },
-              {
-                image: './assets/POInstant.jpg',
-                title: 'PO Instant',
-                year: '2025'
-              }
-            ]
-          },
-          {
-            category: 'Infographics & Data Communication',
-            description: 'Infographics and data-driven visuals designed to communicate business performance, reports, and digital product insights.',
-            items: [{
-                image: './assets/MonthlyReport1.jpg',
-                title: 'Monthly Report',
-                year: '2024'
-              },
-              {
-                image: './assets/MonthlyReport2.jpg',
-                title: 'Payment Report',
-                year: '2024'
-              },
-              {
-                image: './assets/MonthlyReport3.jpg',
-                title: 'Payment Report',
-                year: '2024'
-              },
-              {
-                image: './assets/MonthlyReport4.jpg',
-                title: 'Payment Report',
-                year: '2024'
-              },
-              {
-                image: './assets/MonthlyReport5.jpg',
-                title: 'Monthly Report',
-                year: '2024'
-              },
-              {
-                image: './assets/MonthlyReport6.jpg',
-                title: 'Monthly Report',
-                year: '2025'
-              }
-            ]
-          }
-        ]
-      }
+  id: 'visual-design',
+  title: 'Visual Communication & Promotional Design',
+  category: 'Visual Design',
+  year: '2024 — 2026',
+  role: 'UI/UX Analyst',
+  tools: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop'],
+  description: 'A collection of visual communication, promotional, and infographic assets created to support digital products, campaigns, internal communication, and business reporting.',
+  type: 'gallery',
+  gallery: [
+    {
+      category: 'Social Media & Digital Campaigns',
+      description: 'Social media visuals and campaign assets designed for product promotion, customer engagement, seasonal campaigns, and digital communication.',
+      items: [
+        { image: './assets/cover-poster.jpg', title: 'Social Media Poster', year: '2026' },
+        { image: './assets/PelunasanDipercepat.jpg', title: 'Early Settlement', year: '2025' },
+        { image: './assets/PerpanjanganSTNK.jpg', title: 'STNK Extension', year: '2025' },
+        { image: './assets/RencanakanKredit.jpg', title: 'Credit Simulation', year: '2025' },
+        { image: './assets/DigiSign.jpg', title: 'DigiSign', year: '2026' },
+        { image: './assets/Endorsement.jpg', title: 'Endorsement Campaign', year: '2026' },
+        { image: './assets/GIIAS.jpg', title: 'GIIAS', year: '2025' },
+        { image: './assets/PinjamDana.jpg', title: 'Pinjam Dana', year: '2025' },
+        { image: './assets/PromoHarpelnas.jpg', title: 'Harpelnas 2025', year: '2025' },
+        { image: './assets/promo-cashback-va.jpg', title: 'Virtual Account — MTF Mobile', year: '2026' },
+        { image: './assets/download-mtfmobile.jpg', title: 'MTF Mobile — App Download Campaign', year: '2026' },
+        { image: './assets/product-launch.jpg', title: 'Collect-in — Product Launch', year: '2026' },
+        { image: './assets/pengambilan-bpkb.jpg', title: 'BPKB Pickup Booking — MTF Mobile', year: '2026' },
+        { image: './assets/PGM.jpg', title: 'Perwira Get Member Campaign', year: '2025' },
+        { image: './assets/va-launched.jpg', title: 'Virtual Account — Self-Service Payment', year: '2026' },
+        { image: './assets/StnkNonDebitur.jpg', title: 'STNK Extension — MTF Mobile', year: '2026' },
+        { image: './assets/BayarAngsuran.jpg', title: 'Payment via MTF Mobile', year: '2025' },
+        { image: './assets/BookingBPKB.jpg', title: 'BPKB Pickup Booking', year: '2025' },
+        { image: './assets/FiturEksklusif.jpg', title: 'Exclusive Features', year: '2025' },
+        { image: './assets/Harpelnas2025.jpg', title: 'Harpelnas 2025', year: '2025' },
+        { image: './assets/LelangInfo.jpg', title: 'Car Auction', year: '2025' },
+        { image: './assets/MTFMobile.jpg', title: 'Productivity & Cashback Campaign', year: '2025' }
+      ]
+    },
+    {
+      category: 'Website & Digital Banners',
+      description: 'Digital banners and promotional visuals designed for websites, landing pages, popups, and other digital touchpoints.',
+      items: [
+        { image: './assets/Xbanner.jpg', title: 'Download App X-Banner', year: '2025' },
+        { image: './assets/Lapping.jpg', title: 'Anti-Lapping Awareness', year: '2025' },
+        { image: './assets/Lelang.jpg', title: 'Lelang Mobil', year: '2025' },
+        { image: './assets/Mtf.jpg', title: 'Financial Management', year: '2025' },
+        { image: './assets/Pajak.jpg', title: 'Tax Payment', year: '2025' },
+        { image: './assets/PencairanDana.jpg', title: 'Fund Disbursement', year: '2025' },
+        { image: './assets/ReferralPertamina.jpg', title: 'Instagram Post', year: '2024' },
+        { image: './assets/PromoHutRI.jpg', title: 'Special Kemerdekaan', year: '2025' },
+        { image: './assets/pgm.jpg', title: 'Perwira Get Member Campaign', year: '2025' },
+        { image: './assets/PartnerBlibli.jpg', title: 'Promotional Campaign', year: '2025' },
+        { image: './assets/informasi-hari-libur.jpg', title: 'Payment & STNK Extension Reminder', year: '2025' },
+      ]
+    },
+    {
+      category: 'Email & Direct Communication',
+      description: 'Visual communication assets created for email marketing, customer notifications, reminders, and direct digital communication.',
+      items: [
+        { image: './assets/Reminder.jpg', title: 'Payment Reminder — MTF Mobile', year: '2025' },
+        { image: './assets/BranchCompetition.jpg', title: 'MTF Mobile Branch Competition', year: '2024' },
+        { image: './assets/UserTestimonial.jpg', title: 'Internal Email Campaign', year: '2026' },
+        { image: './assets/OHCompetition.jpg', title: 'Reward Campaign', year: '2025' },
+        { image: './assets/PDP.jpg', title: 'PDP Customer Education', year: '2025' },
+        { image: './assets/Sla.jpg', title: 'Faster Process', year: '2025' },
+        { image: './assets/TransaksiAman.jpg', title: 'Secure Transactions', year: '2026' },
+        { image: './assets/Asuransi.jpg', title: 'Vehicle Insurance', year: '2026' },
+        { image: './assets/KejarRewards.jpg', title: 'Branch Campaign', year: '2025' },
+        { image: './assets/POInstant.jpg', title: 'PO Instant', year: '2025' }
+      ]
+    },
+    {
+      category: 'Infographics & Data Communication',
+      description: 'Infographics and data-driven visuals designed to communicate business performance, reports, and digital product insights.',
+      items: [
+        { image: './assets/MonthlyReport1.jpg', title: 'Monthly Report', year: '2024' },
+        { image: './assets/MonthlyReport2.jpg', title: 'Payment Report', year: '2024' },
+        { image: './assets/MonthlyReport3.jpg', title: 'Payment Report', year: '2024' },
+        { image: './assets/MonthlyReport4.jpg', title: 'Payment Report', year: '2024' },
+        { image: './assets/MonthlyReport5.jpg', title: 'Monthly Report', year: '2024' },
+        { image: './assets/MonthlyReport6.jpg', title: 'Monthly Report', year: '2025' }
+      ]
+    }
+  ]
+}
     ];
     const filters = ['All', 'Product Design', 'UI/UX', 'Web', 'Visual Design'];
     const filterOf = p => ['Mobile Application', 'Enterprise Product'].includes(p.category) ? 'Product Design' : [
@@ -1300,7 +1118,7 @@
     }
 
     function getProjectThumbnail(p) {
-      if (p.type === 'gallery' && p.gallery ? .length && p.gallery[0].items ? .length) {
+      if (p.type === 'gallery' && p.gallery?.length && p.gallery[0].items?.length) {
         return p.gallery[0].items[0].image;
       }
       return p.images[0];
@@ -1332,8 +1150,7 @@
       const previousProject = projects[projectIndex - 1];
       const nextProject = projects[projectIndex + 1];
 
-      const previousNext =
-        `
+      const previousNext = `
         <section class="border-t border-black/[.08]">
           <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex justify-between">
             ${previousProject
@@ -1364,15 +1181,14 @@
         const gridId = `gallery-grid-${p.id || 'visual'}`;
 
         const renderGallery = (active = 'All') => {
-          const filtered = active === 'All' ?
-            allItems :
-            allItems.filter(item => item.section === active);
+          const filtered = active === 'All'
+            ? allItems
+            : allItems.filter(item => item.section === active);
 
           const grid = document.getElementById(gridId);
           if (!grid) return;
 
-          grid.innerHTML = filtered.map((item, index) =>
-            `
+          grid.innerHTML = filtered.map((item, index) => `
             <button
               onclick="showImage('${item.image}','${item.title}')"
               class="gallery-masonry-item group relative mb-5 block w-full overflow-hidden rounded-2xl bg-white border border-black/[.06] cursor-zoom-in text-left"
@@ -1391,8 +1207,7 @@
                 </span>
               </span>
             </button>
-          `
-          ).join('');
+          `).join('');
         };
 
         detail.innerHTML =
@@ -1453,8 +1268,7 @@
 
         renderGallery('All');
       } else {
-        detail.innerHTML =
-          `
+        detail.innerHTML = `
           <header class="sticky top-0 z-10 bg-[#F9F8F6]/90 backdrop-blur-md border-b border-black/[.06]">
             <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
               <button onclick="closeProject()" class="text-sm font-bold hover:text-[#2563EB]">← Back to work</button>
