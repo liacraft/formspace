@@ -1,6 +1,5 @@
 
-# formspace — Design Portfolio
-
+# formspace
 A curated collection of UI/UX design, product design, and visual communication projects.
 
 Built with HTML, Tailwind CSS, and Vanilla JavaScript, with no frontend framework or build tools required.
